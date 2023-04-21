@@ -153,11 +153,10 @@ public class FamilyTree
 		else
 		{
 			parentNode = root.getNodeWithName(parent);
-			if (parent == null) {
+			if (parentNode == null) {
 				throw new TreeException("parent node not found");
 			}
 		}
-		
 		// Add child nodes to parentNode.
 		for (String child: childrenArray) {
 			parentNode.addChild(new TreeNode(child));
