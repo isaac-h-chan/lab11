@@ -141,7 +141,7 @@ public class FamilyTree
 			throw new TreeException("empty tree");
 		}
 		String parent = line.substring(0, colonIndex);
-		String childrenString = line.substring(colonIndex);
+		String childrenString = line.substring(colonIndex + 1);
 		String[] childrenArray = childrenString.split(",");
 		
 		// Find parent node. If root is null then the tree is empty and the
@@ -159,6 +159,10 @@ public class FamilyTree
 		}
 		// Add child nodes to parentNode.
 		for (String child: childrenArray) {
+			System.out.println("parent: " + parent);
+			System.out.println("child: " + child);
+			System.out.println(parentNode.children + "\n");
+			
 			parentNode.addChild(new TreeNode(child));
 		}
 	}
